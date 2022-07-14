@@ -1,0 +1,70 @@
+<html lang="ja">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>メガ式田代弾投下装置 URL指定</title>
+    </head>
+    <body>
+        <script>
+        var i, pp, tt, add, ac, timeid;
+        add = 1;
+        
+        function kr() {
+            ww.location.reload(true);
+            timeid = setTimeout("kr()", tt);
+        }
+        
+        function ks(qq) {
+            pp = qq;
+            ac = 0;
+            uu = f.urled.value;
+            tt = parseFloat(f.ival.value);
+            add = parseFloat(f.mcount.value);
+            clearTimeout(timeid);
+            if (pp != 0) {
+                document.f.sta.value="訪問回数: " + (++ac) + " × " + add + " = " + (ac * add) + " 回";
+                for (i = 0; i < add; i++) {
+                    ww.document.write("<iframe name='ww");
+                    ww.document.write(i);
+                    ww.document.write("' src='");
+                    ww.document.write(f.urled.value);
+                    ww.document.write("'></iframe>");
+                }
+                //ww.startcy();
+                kr();
+            }
+            else {
+                f.sta.value = "訪問停止中";
+                //ww.document.write("<iframe height=100%  width=100% src='");
+                //ww.document.write(f.urled.value);
+                //ww.document.write("'></iframe>");
+                ww.location.reload(true);
+            }
+        }
+        </script>
+        <font size="5" color="#0000ff">メガ式田代弾投下装置</font>
+        <font size="3" color="#0000ff">　　URL指定</font><br><br>
+        訪問先URL
+        <form name="f">
+            <input type="text" size="80" name="urled" value="目標URLを入力して下さい"><br>
+            砲門数　
+            <input type="text" size="12" name="mcount" value="4"><br>
+            訪問間隔
+            <input type="text" size="12" name="ival" value="1000">
+            （単位ミリ秒）<br>
+            <input type="button" value="訪問開始" onclick="ks(1);">
+            <input type="text" size="40" name="sta" value="訪問停止中" readonly="">
+            <input type="button" value="訪問停止" onclick="ks(0);"><br>
+            <hr> <!-- 今更だが、<hr>タグは横線のことらしい。 -->
+            <iframe name="ww" src="about:blank" height="62%" width="100%"></iframe>
+        </form>
+    <script type="text/javascript"><!--
+var fc2footerparam = 'charset=' + encodeURIComponent(document.charset ? document.charset : document.characterSet) + '&url=' + encodeURIComponent(document.location) + '&service=0&r=' + Math.floor(Math.random()*99999999999);
+var fc2footertag = '<' + 'script src="//vip.chps-api.fc2.com/apis/footer/?' + fc2footerparam + '" charset="UTF-8"><' + '/script>';
+document.write(fc2footertag);
+//--></script>
+<!-- FC2, inc.-->
+<img src="//media.fc2.com/counter_img.php?id=50" style="visibility:hidden" alt="inserted by FC2 system" width="0" height="0">
+<!-- FC2, inc.-->
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="GENERATOR" content="MSHTML 8.00.7601.17744">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>田代級快速雷撃艦ミニニタコα</title>
+    </head>
+    <body>
+        <h1>田代級快速雷撃艦ミニニタコα</h1>
+        3つの兵器を組み合わせた田代艦。お好みに応じてどうぞ。
+        <hr>
+        <form name="x">
+        主砲・超田代レールガンβ<br><br>
+        ターゲットURL:<br>
+        <input value="訪問先URL入力" size="50" name="urlEd"><br>自動更新間隔(1000=1秒):
+        <input value="1000" size="5" name="ival"><br>砲門数(POPUP):
+        <input value="5" size="5" name="pop"> <br>
+        <input onclick="kS(1);" value="最終兵器・超田代レールガンβ発射！" type="button"><br>
+        <input value="停止中" readonly="" size="50" name="sta"><br><input onclick="kS(0);" value="砲撃停止" type="button">
+        </form>
+        <hr>
+        <form name="y">
+        副砲・超田代砲改 Ver.1.21<br><br>
+        ターゲットURL:<br>
+        <input value="ここに目標URLを入れる" size="50" name="address"><br>
+        自動更新間隔:<br>
+        <input value="1" size="5" name="inter">秒<br>
+        既発射弾数:<br>
+        <input type="text" name="fired" value="0"><br>
+        <input onclick="display();" value="核兵器・超田代砲発射！" type="button"><br>
+        </form>
+        <hr>
+        <form name="z">
+        特殊兵器・田代ファンネルver1.11<br><br>
+        ターゲットURL:<input value="http://" size="60" name="url"><br>
+        自動更新間隔(1000=1秒):<input value="500" size="6" name="ival"><br>
+        <input onclick="one();" value="田代ファンネルx1発射！" type="button">
+        <br><input onclick="two();" value="田代ファンネルx2発射！" type="button">
+        <br><input onclick="three();" value="田代ファンネルx3発射！" type="button">
+        <br><input onclick="four();" value="田代ファンネルx4発射！" type="button">
+        <br><input onclick="five();" value="田代ファンネルx5発射！" type="button">
+        <br><input onclick="eight();" value="田代ファンネルx8発射！" type="button">
+        </form>
+        <script>
+        //主砲・超田代レールガンβ
+        var pp, tt, ac, timeid, i; 
+        
+        function kR() { 
+            if (pp == 1) {
+                for (i = 0; i < x.pop.value; i++) {
+                    w[i].location = x.urlEd.value;
+                }
+                timeid = setTimeout("kR()", tt); 
+                x.sta.value = "自動更新間隔:"+(tt/1000)+"秒　アクセス回数:"+(++ac * x.pop.value)+"回";
+            }
+        }
+        
+        function kS(qq) {
+            pp = qq; ac = 0; 
+            tt = parseFloat(x.ival.value);
+            clearTimeout(timeid);
+            if (pp == 1) {
+                w = new Array(x.pop.value);
+                for (i = 0; i < x.pop.value; i++) {
+                    w[i] = window.open(x.urlEd.value,'sann'+i,'width=200,height=100');
+                }
+                kR();
+            }
+            if (pp == 0) {
+                x.sta.value = "砲撃停止";
+                for (i = 0; i < x.pop.value; i++) {
+                    w[i].close();
+                }
+            }
+        }
+        
+        //副砲・超田代砲改 Ver.1.21
+        var wind, add;
+        function display() {
+            add = y.address.value;
+            wind = window.open(add, 'san', 'width=400, height=400');
+            tashiro();
+        }
+        
+        function tashiro() {
+            wind.location = add;
+            y.fired.value++;
+            setTimeout("tashiro();",y.inter.value*1000);
+        }
+        
+        //特殊兵器・田代ファンネルver1.11
+        var tid;
+        function one() {
+            var tf1 = ("url()",z.url.value);
+            w = window.open(tf1,'san1','WIDTH=20,height=100');
+            w.location = tf1;
+            tid = setTimeout("one()",z.ival.value);
+        }
+        
+        function two() {
+            var tf1 = ("url()",z.url.value);
+            w = window.open(tf1,'san1','WIDTH=20,height=100');
+            var tid;
+            var tf2 = ("url()",z.url.value);
+            w = window.open(tf2,'san2','WIDTH=20,height=100');
+            w.location = tf1;
+            tid = setTimeout("two()",z.ival.value);
+            w.location = tf2;
+            tid = setTimeout("two()",z.ival.value);
+        }
+        
+        function three() {
+            var tf1 = ("url()",z.url.value);
+            w = window.open(tf1,'san1','WIDTH=20,height=100');
+            var tf2 = ("url()",z.url.value);
+            w = window.open(tf2,'san2','WIDTH=20,height=100');
+            var tf3 = ("url()",z.url.value);
+            w = window.open(tf3,'san3','WIDTH=20,height=100');
+            w.location = tf1;
+            tid = setTimeout("three()",z.ival.value);
+            w.location = tf2;
+            tid = setTimeout("three()",z.ival.value);
+            w.location = tf3;
+            tid = setTimeout("three()",z.ival.value);
+        }
+        
+        function four() {
+            var tf1 = ("url()",z.url.value);
+            w = window.open(tf1,'san1','WIDTH=20,height=100');
+            var tf2 = ("url()",z.url.value);
+            w = window.open(tf2,'san2','WIDTH=20,height=100');
+            var tf3 = ("url()",z.url.value);
+            w = window.open(tf3,'san3','WIDTH=20,height=100');
+            var tf4 = ("url()",z.url.value);
+            w = window.open(tf4,'san4','WIDTH=20,height=100');
+            w.location = tf1;
+            tid = setTimeout("four()",z.ival.value);
+            w.location = tf2;
+            tid = setTimeout("four()",z.ival.value);
+            w.location=tf3;
+            tid = setTimeout("four()",z.ival.value);
+            w.location=tf4;
+            tid = setTimeout("four()",z.ival.value);
+        }
+        
+        function five() {
+            var tf1 = ("url()",z.url.value);
+            w = window.open(tf1,'san1','WIDTH=20,height=100');
+            var tf2 = ("url()",z.url.value);
+            w = window.open(tf2,'san2','WIDTH=20,height=100');
+            var tf3 = ("url()",z.url.value);
+            w = window.open(tf3,'san3','WIDTH=20,height=100');
+            var tf4 = ("url()",z.url.value);
+            w = window.open(tf4,'san4','WIDTH=20,height=100');
+            var tf5 = ("url()",z.url.value);
+            w = window.open(tf5,'san5','WIDTH=20,height=100');
+            w.location = tf1;
+            tid = setTimeout("five()",z.ival.value);
+            w.location = tf2;
+            tid = setTimeout("five()",z.ival.value);
+            w.location = tf3;
+            tid = setTimeout("five()",z.ival.value);
+            w.location = tf4;
+            tid = setTimeout("five()",z.ival.value);
+            w.location = tf5;
+            tid = setTimeout("five()",z.ival.value);
+        }
+        
+        function eight() {
+            var tf1 = ("url()",z.url.value);
+            w = window.open(tf1,'san1','WIDTH=20,height=100');
+            var tf2 = ("url()",z.url.value);
+            w = window.open(tf2,'san2','WIDTH=20,height=100');
+            var tf3 = ("url()",z.url.value);
+            w = window.open(tf3,'san3','WIDTH=20,height=100');
+            var tf4 = ("url()",z.url.value);
+            w = window.open(tf4,'san4','WIDTH=20,height=100');
+            var tf5 = ("url()",z.url.value);
+            w = window.open(tf5,'san5','WIDTH=20,height=100');
+            var tf6 = ("url()",z.url.value);
+            w = window.open(tf6,'san6','WIDTH=20,height=100');
+            var tf7 = ("url()",z.url.value);
+            w = window.open(tf7,'san7','WIDTH=20,height=100');
+            var tf8 = ("url()",z.url.value);
+            w = window.open(tf8,'san8','WIDTH=20,height=100');
+            w.location = tf1;
+            tid = setTimeout("eight()",z.ival.value);
+            w.location = tf2;
+            tid = setTimeout("eight()",z.ival.value);
+            w.location = tf3;
+            tid = setTimeout("eight()",z.ival.value);
+            w.location=tf4;
+            tid = setTimeout("eight()",z.ival.value);
+            w.location=tf5;
+            tid = setTimeout("eight()",z.ival.value);
+            w.location = tf6;
+            tid = setTimeout("eight()",z.ival.value);
+            w.location = tf7;
+            tid = setTimeout("eight()",z.ival.value);
+            w.location = tf8;
+            tid = setTimeout("eight()",z.ival.value);
+        }
+        </script>
+        <hr>
+    <script type="text/javascript"><!--
+var fc2footerparam = 'charset=' + encodeURIComponent(document.charset ? document.charset : document.characterSet) + '&url=' + encodeURIComponent(document.location) + '&service=0&r=' + Math.floor(Math.random()*99999999999);
+var fc2footertag = '<' + 'script src="//vip.chps-api.fc2.com/apis/footer/?' + fc2footerparam + '" charset="UTF-8"><' + '/script>';
+document.write(fc2footertag);
+//--></script>
+<!-- FC2, inc.-->
+<img src="//media.fc2.com/counter_img.php?id=50" style="visibility:hidden" alt="inserted by FC2 system" width="0" height="0">
+<!-- FC2, inc.-->
+</body>
+</html>
